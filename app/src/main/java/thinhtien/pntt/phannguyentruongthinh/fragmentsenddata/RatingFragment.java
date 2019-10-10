@@ -29,9 +29,9 @@ public class RatingFragment extends Fragment {
         ratingBar = view.findViewById(R.id.ratingbar);
 
         Bundle bundle = getArguments();
-        int numstar = bundle.getInt("numstart");
+        int numstar = bundle.getInt("numstar");
 
-        ratingBar.setNumStars(numstar);
+        ratingBar.setRating(numstar);
         return view;
     }
 

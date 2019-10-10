@@ -1,6 +1,7 @@
 package thinhtien.pntt.phannguyentruongthinh.fragmentsenddata;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -25,20 +26,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Fragment fragment = null;
+                Bundle bundle;
                 switch (i){
                     case R.id.radioBad:
+                        fragment = new RatingFragment();
+                        bundle = new Bundle();
+                        bundle.putInt("numstar",1);
+                        fragment.setArguments(bundle);
                         break;
                     case R.id.radioLike:
+                        fragment = new RatingFragment();
+                        bundle = new Bundle();
+                        bundle.putInt("numstar",3);
+                        fragment.setArguments(bundle);
+
                         break;
                     case R.id.radioEnjoy:
+                        fragment = new RatingFragment();
+                        bundle = new Bundle();
+                        bundle.putInt("numstar",5);
+                        fragment.setArguments(bundle);
                         break;
                 }
 
-                RatingFragment ratingFragment = new RatingFragment();
-                Bundle bundle = new Bundle();
-                bundle.putInt("numstar",1);
-                ratingFragment.setArguments(bundle);
-                fragmentTransaction.add(R.id.linearContainer,ratingFragment);
+                fragmentTransaction.add(R.id.linearContainer,fragment);
                 fragmentTransaction.commit();
             }
         });
