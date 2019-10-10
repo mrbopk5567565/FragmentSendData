@@ -52,7 +52,18 @@
         android:layout_below="@id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <fragment
+            android:name="thinhtien.pntt.phannguyentruongthinh.fragmentsenddata.InputRatingFragment"
+            android:id="@+id/fragmentInput"
+            android:layout_below="@id/linearContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <fragment
+            android:name="thinhtien.pntt.phannguyentruongthinh.fragmentsenddata.RatingFragment"
+            android:id="@+id/fragmentRating"
+            android:layout_below="@id/fragmentInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </RelativeLayout>

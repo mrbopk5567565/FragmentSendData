@@ -19,6 +19,8 @@ public class RatingFragment extends Fragment {
 
     View view;
     RatingBar ratingBar;
+    // thang gui du lieu cho ratingbar la thang su dung interface
+    OnListenerRatingBar onListenerRatingBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,13 +28,29 @@ public class RatingFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_rating, container, false);
 
+
+//        // gui du lieu Activity qua Fragment
         ratingBar = view.findViewById(R.id.ratingbar);
+//
+//        Bundle bundle = getArguments();
+//        int numstar = bundle.getInt("numstar");
+//
+//        ratingBar.setRating(numstar);
+//        // finish
 
-        Bundle bundle = getArguments();
-        int numstar = bundle.getInt("numstar");
+        // gui du lieu Fragment vs Fragment
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                onListenerRatingBar.onChange(v);
+            }
+        });
 
-        ratingBar.setRating(numstar);
         return view;
+    }
+
+    public void setOnListenerRatingBar(OnListenerRatingBar onListenerRatingBar){
+        this.onListenerRatingBar = onListenerRatingBar;
     }
 
 }
