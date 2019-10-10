@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RatingFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textviewtitleInput"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold|italic"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#f20"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Input Star for app" />
+
+    <EditText
+        android:hint="input number star"
+        android:id="@+id/edittextInput"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textviewtitleInput"
+        android:numStars="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
